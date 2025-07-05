@@ -1,0 +1,286 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# ===================================
+# DEPENDENCIES
+# ===================================
+node_modules/
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+jspm_packages/
+
+# ===================================
+# NEXT.JS
+# ===================================
+/.next/
+/out/
+.next
+next-env.d.ts
+
+# Next.js build output
+/build
+/dist
+
+# Next.js standalone output
+.next/standalone/
+.next/static/
+
+# ===================================
+# ENVIRONMENT VARIABLES
+# ===================================
+.env
+.env*.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ===================================
+# PACKAGE MANAGERS
+# ===================================
+# npm
+package-lock.json
+npm-debug.log*
+
+# yarn
+yarn.lock
+yarn-debug.log*
+yarn-error.log*
+.yarn-integrity
+
+# pnpm (keeping this as it's being used)
+# pnpm-lock.yaml
+pnpm-debug.log*
+
+# bun
+bun.lockb
+
+# ===================================
+# TESTING & COVERAGE
+# ===================================
+/coverage
+coverage/
+*.lcov
+.nyc_output
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+# ===================================
+# TYPESCRIPT
+# ===================================
+*.tsbuildinfo
+*.tsbuildinfo.*
+
+# ===================================
+# LINTING & FORMATTING
+# ===================================
+.eslintcache
+.stylelintcache
+
+# ===================================
+# BUNDLERS & BUILD TOOLS
+# ===================================
+# Webpack
+.webpack/
+
+# Rollup
+.rollup.cache/
+
+# Parcel
+.cache
+.parcel-cache
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# Turbo
+.turbo
+
+# SWC
+.swc/
+
+# ===================================
+# DEPLOYMENT
+# ===================================
+# Vercel
+.vercel
+
+# Netlify
+.netlify/
+
+# AWS
+.aws-sam/
+
+# ===================================
+# DATABASES
+# ===================================
+# MongoDB
+*.db
+*.sqlite
+*.sqlite3
+
+# DynamoDB Local
+.dynamodb/
+
+# ===================================
+# AUTHENTICATION & SECRETS
+# ===================================
+# Clerk
+/.clerk/
+
+# Auth0
+.auth0/
+
+# ===================================
+# LOGS
+# ===================================
+logs
+*.log
+lerna-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# ===================================
+# CACHES
+# ===================================
+# npm
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Temporary folders
+tmp/
+temp/
+
+# ===================================
+# IDE & EDITORS
+# ===================================
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Visual Studio Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# Atom
+.atom/
+
+# ===================================
+# OPERATING SYSTEMS
+# ===================================
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.AppleDouble
+.LSOverride
+Icon
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ===================================
+# MEDIA & ASSETS
+# ===================================
+# Certificates
+*.pem
+*.key
+*.crt
+*.cert
+
+# ===================================
+# AI/ML & ANALYTICS
+# ===================================
+# Zencoder (AI coding assistant)
+.zencoder/
+zencoder-*.log
+
+# Bundle analyzer
+.bundle-analyzer/
+
+# ===================================
+# SERVERLESS
+# ===================================
+.serverless/
+
+# ===================================
+# DOCKER
+# ===================================
+.dockerignore
+
+# ===================================
+# MISC
+# ===================================
+# TernJS port file
+.tern-port
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
+
+# FuseBox cache
+.fusebox/
+
+# Storybook build outputs
+.out
+.storybook-out
+storybook-static
+
+# Temporary files
+*.tmp
+*.temp
