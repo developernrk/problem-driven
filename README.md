@@ -6,6 +6,7 @@
 
 > *"Every problem is an opportunity in disguise. ProblemDriven helps you see the solution."*
 
+
 ## 📸 Application Screenshots
 
 ![ProblemDriven Platform - Homepage](public/images/screenshot1.png)
