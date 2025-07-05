@@ -5,7 +5,7 @@ import Idea from '@/models/Idea';
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const { userId } = await auth();
@@ -22,7 +22,8 @@ export async function DELETE(
 
     await connectDB();
 
-    const ideaId = params.id;
+    const { id } = await params;
+    const ideaId = id;
     
     const deletedIdea = await Idea.findByIdAndDelete(ideaId);
     
@@ -49,7 +50,7 @@ return NextResponse.json(
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const { userId } = await auth();
@@ -65,7 +66,8 @@ export async function PUT(
 
     await connectDB();
 
-    const ideaId = params.id;
+    const { id } = await params;
+    const ideaId = id;
     const updateData = await request.json();
     
     const updatedIdea = await Idea.findByIdAndUpdate(

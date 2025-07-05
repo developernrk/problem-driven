@@ -4,13 +4,14 @@ import Idea from '@/models/Idea';
 
 export async function POST(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     await connectDB();
 
+    const { id } = await params;
     const idea = await Idea.findByIdAndUpdate(
-      params.id,
+      id,
       { $inc: { likes: 1 } },
       { new: true }
     );

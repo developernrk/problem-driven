@@ -4,9 +4,9 @@ import connectDB from '@/lib/database';
 import Idea from '@/models/Idea';
 
 interface IdeaPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 async function getIdea(id: string) {
@@ -27,7 +27,8 @@ return null;
 }
 
 export default async function IdeaPage({ params }: IdeaPageProps) {
-  const idea = await getIdea(params.id);
+  const { id } = await params;
+  const idea = await getIdea(id);
 
   if (!idea) {
     notFound();
@@ -37,7 +38,8 @@ export default async function IdeaPage({ params }: IdeaPageProps) {
 }
 
 export async function generateMetadata({ params }: IdeaPageProps) {
-  const idea = await getIdea(params.id);
+  const { id } = await params;
+  const idea = await getIdea(id);
 
   if (!idea) {
     return {

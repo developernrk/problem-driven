@@ -7,7 +7,7 @@ import { geminiModel } from '@/lib/gemini';
 // POST /api/chat/threads/[threadId]/messages - Add a message to thread and get AI response
 export async function POST(
   request: NextRequest,
-  { params }: { params: { threadId: string } }
+  { params }: { params: Promise<{ threadId: string }> }
 ) {
   try {
     const { userId } = await auth();
@@ -27,9 +27,10 @@ export async function POST(
 
     await connectDB();
 
+    const { threadId } = await params;
     // Find the thread
     const thread = await ChatThread.findOne({
-      _id: params.threadId,
+      _id: threadId,
       userId,
       isActive: true
     });

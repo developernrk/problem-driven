@@ -4,12 +4,13 @@ import Idea from '@/models/Idea';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     await connectDB();
 
-    const idea = await Idea.findById(params.id);
+    const { id } = await params;
+    const idea = await Idea.findById(id);
     if (!idea) {
       return NextResponse.json(
         { error: 'Idea not found' },
@@ -18,7 +19,7 @@ export async function GET(
     }
 
     // Increment view count
-    await Idea.findByIdAndUpdate(params.id, { $inc: { views: 1 } });
+    await Idea.findByIdAndUpdate(id, { $inc: { views: 1 } });
 
     return NextResponse.json({ success: true, data: idea });
   } catch (error) {
@@ -33,14 +34,15 @@ return NextResponse.json(
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     await connectDB();
 
+    const { id } = await params;
     const body = await request.json();
     const idea = await Idea.findByIdAndUpdate(
-      params.id,
+      id,
       body,
       { new: true, runValidators: true }
     );
@@ -65,12 +67,13 @@ return NextResponse.json(
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     await connectDB();
 
-    const idea = await Idea.findByIdAndDelete(params.id);
+    const { id } = await params;
+    const idea = await Idea.findByIdAndDelete(id);
     if (!idea) {
       return NextResponse.json(
         { error: 'Idea not found' },

@@ -397,7 +397,7 @@ const AdminDashboard: React.FC = () => {
                   </TableHeader>
                   <TableBody>
                     {users.slice(0, 10).map((user) => (
-                      <TableRow key={user._id}>
+                      <TableRow key={user.clerkId}>
                         <TableCell className="font-medium">
                           {user.email}
                         </TableCell>

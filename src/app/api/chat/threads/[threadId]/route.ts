@@ -6,7 +6,7 @@ import ChatThread from '@/models/ChatThread';
 // GET /api/chat/threads/[threadId] - Get a specific thread
 export async function GET(
   request: NextRequest,
-  { params }: { params: { threadId: string } }
+  { params }: { params: Promise<{ threadId: string }> }
 ) {
   try {
     const { userId } = await auth();
@@ -17,8 +17,9 @@ export async function GET(
 
     await connectDB();
 
+    const { threadId } = await params;
     const thread = await ChatThread.findOne({
-      _id: params.threadId,
+      _id: threadId,
       userId,
       isActive: true
     }).lean();
@@ -44,7 +45,7 @@ return NextResponse.json(
 // PUT /api/chat/threads/[threadId] - Update thread (e.g., title)
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { threadId: string } }
+  { params }: { params: Promise<{ threadId: string }> }
 ) {
   try {
     const { userId } = await auth();
@@ -57,9 +58,10 @@ export async function PUT(
 
     await connectDB();
 
+    const { threadId } = await params;
     const thread = await ChatThread.findOneAndUpdate(
       {
-        _id: params.threadId,
+        _id: threadId,
         userId,
         isActive: true
       },
@@ -88,7 +90,7 @@ return NextResponse.json(
 // DELETE /api/chat/threads/[threadId] - Delete thread (soft delete)
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { threadId: string } }
+  { params }: { params: Promise<{ threadId: string }> }
 ) {
   try {
     const { userId } = await auth();
@@ -99,9 +101,10 @@ export async function DELETE(
 
     await connectDB();
 
+    const { threadId } = await params;
     const thread = await ChatThread.findOneAndUpdate(
       {
-        _id: params.threadId,
+        _id: threadId,
         userId,
         isActive: true
       },
