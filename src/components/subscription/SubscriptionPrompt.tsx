@@ -148,11 +148,13 @@ return (
                   } ${plan.popular ? 'border-teal-500' : ''}`}
                   onClick={() => setSelectedPlan(plan.name)}
                 >
-                  {plan.popular && (
-                    <Badge className="absolute -top-2 left-1/2 transform -translate-x-1/2 bg-teal-600">
-                      Most Popular
-                    </Badge>
-                  )}
+                  <>
+                      {plan.popular && (
+                          <Badge className="absolute -top-2 left-1/2 transform -translate-x-1/2 bg-teal-600">
+                              Most Popular
+                          </Badge>
+                      )}
+                  </>
 
                   <CardHeader className="text-center pb-2">
                     <CardTitle className="text-lg">{plan.name}</CardTitle>
@@ -195,10 +197,9 @@ return (
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 pt-4">
             <Button
-              className="flex-1"
               size="lg"
               onClick={() => handleSubscribe(selectedPlan)}
-              className="bg-teal-600 hover:bg-teal-700"
+              className="flex-1 bg-teal-600 hover:bg-teal-700"
             >
               <Target className="h-4 w-4 mr-2" />
               Upgrade to Premium
