@@ -14,7 +14,7 @@
 ![ProblemDriven Platform - Dashboard](public/images/screenshot2.png)
 *Homepage showcasing the problem-solution marketplace with AI-powered search and category navigation*
 
-![ProblemDriven Platform - Dashboard](public/images/screenshot2.png)
+![ProblemDriven Platform - Dashboard](public/images/screenshot3.png)
 *User dashboard displaying solution cards, impact metrics, and activities*
 
 ## ✨ Platform Vision
