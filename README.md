@@ -1,5 +1,6 @@
 # 🎯 ProblemDriven - AI-Powered Problem-Solution Marketplace [[LIVE DEMO](https://problemdriven.vercel.app/)]
 
+
 ![MIT License](https://img.shields.io/badge/license-MIT-blue) [![TypeScript](https://badgen.net/badge/icon/typescript?icon=typescript&label)](https://typescriptlang.org) ![ESLint](https://img.shields.io/badge/code%20style-eslint-brightgreen) ![Next.js](https://img.shields.io/badge/Next.js-15-black) ![React](https://img.shields.io/badge/React-19-blue) ![MongoDB](https://img.shields.io/badge/MongoDB-Database-green)
 
 **ProblemDriven** is a revolutionary platform that transforms problems into opportunities through innovative business solutions. Built with Next.js 15, MongoDB, and Google Gemini AI to connect problem solvers with real-world challenges.
