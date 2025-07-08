@@ -20,6 +20,7 @@ export default clerkMiddleware(async (auth, req) => {
   if (req.nextUrl.pathname.startsWith('/api/test')) {
     await auth.protect();
   }
+
   
   // Protect ideas endpoints that require authentication
   if (req.nextUrl.pathname.startsWith('/api/ideas/like') || 
